@@ -17,21 +17,21 @@ defmodule Demo.Application do
       # {Demo.Worker, arg}
     ]
 
-    start_browser_command =
-      case :os.type do
-        {:win32, _} ->
-          "start"
-        {:unix, :darwin} ->
-          "open"
-        {:unix, _} ->
-          "xdg-open"
-      end
+    # start_browser_command =
+    #   case :os.type do
+    #     {:win32, _} ->
+    #       "start"
+    #     {:unix, :darwin} ->
+    #       "open"
+    #     {:unix, _} ->
+    #       "xdg-open"
+    #   end
 
-    if System.find_executable(start_browser_command) do
-      System.cmd(start_browser_command, ["http://localhost:4000"])
-    else
-      Mix.raise "Command not found: #{start_browser_command}"
-    end
+    # if System.find_executable(start_browser_command) do
+    #   System.cmd(start_browser_command, ["http://localhost:4000"])
+    # else
+    #   Mix.raise "Command not found: #{start_browser_command}"
+    # end
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
