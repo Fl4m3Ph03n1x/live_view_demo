@@ -20,19 +20,23 @@ defmodule DemoWeb.LightLive do
 
       <button phx-click="off">
         <img src="images/light-off.svg">
+        <span class="sr-only">Off</span>
       </button>
 
 
       <button phx-click="down">
         <img src="images/down.svg">
+        <span class="sr-only">Down</span>
       </button>
 
       <button phx-click="up">
         <img src="images/up.svg">
+        <span class="sr-only">Up</span>
       </button>
 
       <button phx-click="on">
         <img src="images/light-on.svg">
+        <span class="sr-only">On</span>
       </button>
     </div>
     """
@@ -45,12 +49,12 @@ defmodule DemoWeb.LightLive do
   end
 
   def handle_event("up", _metadata, socket) do
-    update(socket, :brightness, &(&1 + 10))
+    update(socket, :brightness, &min(&1 + 10, 100))
     {:noreply, socket}
   end
 
   def handle_event("down", _metadata, socket) do
-    update(socket, :brightness, &(&1 - 10))
+    update(socket, :brightness, &max(&1 - 10, 0))
     {:noreply, socket}
   end
 

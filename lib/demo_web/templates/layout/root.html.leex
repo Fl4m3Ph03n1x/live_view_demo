@@ -12,17 +12,17 @@
   <body>
     <header>
       <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
+        <div style="margin:auto">
+          <a href="https://phoenixframework.org/" class="phx-logo">
+            <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
+          </a>
+          <div style="text-align:center">
+            <a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a>
             <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
+              <%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %>
             <% end %>
-          </ul>
-        </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
+          </div>
+        </div>
       </section>
     </header>
     <%= @inner_content %>
