@@ -13,7 +13,7 @@ defmodule DemoWeb.LightLive do
     <h1>Front Porch Light</h1>
     <div id="light">
       <div class="meter">
-        <span style="width: <%= @brightness %> ">
+        <span style="width: <%= @brightness %>% ">
           <%= @brightness %>
         </span>
       </div>
@@ -44,22 +44,22 @@ defmodule DemoWeb.LightLive do
 
   @impl true
   def handle_event("on", _metadata, socket) do
-    assign(socket, :brightness, 100)
+    socket = assign(socket, :brightness, 100)
     {:noreply, socket}
   end
 
   def handle_event("up", _metadata, socket) do
-    update(socket, :brightness, &min(&1 + 10, 100))
+    socket = update(socket, :brightness, &min(&1 + 10, 100))
     {:noreply, socket}
   end
 
   def handle_event("down", _metadata, socket) do
-    update(socket, :brightness, &max(&1 - 10, 0))
+    socket = update(socket, :brightness, &max(&1 - 10, 0))
     {:noreply, socket}
   end
 
   def handle_event("off", _metadata, socket) do
-    assign(socket, :brightness, 0)
+    socket = assign(socket, :brightness, 0)
     {:noreply, socket}
   end
 
