@@ -1,4 +1,12 @@
-# Demo
+# LiveView Demo
+
+A demo app that lets you control a light bulb's intensity:
+
+![screenshot](./liveview_demo.png?raw=true "screenshot")
+
+Adapted from the tutorial [Getting Started with Phoenix LiveView](https://pragmaticstudio.com/tutorials/getting-started-with-phoenix-liveview)
+
+# Getting started
 
 To start your Phoenix server:
 
@@ -8,9 +16,14 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-## Learn more
+The project is production ready:
+
+  * Run `MIX_ENV=prod mix release`
+
+For more information refer to the [deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+
+## Learn more about Phoenix LiveView
 
   * Official website: https://www.phoenixframework.org/
   * Guides: https://hexdocs.pm/phoenix/overview.html
