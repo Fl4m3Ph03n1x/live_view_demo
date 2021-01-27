@@ -19,9 +19,11 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 The project is production ready:
 
-  * Run `MIX_ENV=prod mix release`
+  * Run `npm run deploy --prefix assets`
+  * Digest the files `MIX_ENV=prod mix phx.digest`
   * Generate a secret key with `mix phx.gen.secret`
   * Set the key as an environment variable `export SECRET_KEY_BASE={KEY_GENERATED_IN_PREVIOUS_STEP}`
+  * Run `MIX_ENV=prod mix release`
   * Launch server with `_build/prod/rel/demo/bin/demo start`
 
 For more information refer to the [deployment guides](https://hexdocs.pm/phoenix/deployment.html).
